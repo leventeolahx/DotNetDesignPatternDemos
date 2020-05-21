@@ -4,7 +4,7 @@ using System.Diagnostics;
 using System.IO;
 using System.Text;
 
-namespace DotNetDesignPatternDemos.Creational.SOLID
+namespace DotNetDesignPatternDemos.SOLID
 {
     // just stores a couple of journal entries and ways of
     // working with them

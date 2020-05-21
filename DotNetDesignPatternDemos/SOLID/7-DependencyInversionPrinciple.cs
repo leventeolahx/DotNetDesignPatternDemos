@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace DotNetDesignPatternDemos.Creational.SOLID
+namespace DotNetDesignPatternDemos.SOLID
 {
     // hl modules should not depend on low-level; both should depend on abstractions
     // abstractions should not depend on details; details should depend on abstractions

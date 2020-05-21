@@ -1,6 +1,6 @@
 ﻿using System;
 using DotNetDesignPatternDemos.Creational.Builder;
-using DotNetDesignPatternDemos.Creational.SOLID;
+using DotNetDesignPatternDemos.SOLID;
 
 namespace DotNetDesignPatternDemos
 {

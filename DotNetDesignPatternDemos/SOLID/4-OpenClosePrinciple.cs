@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace DotNetDesignPatternDemos.Creational.SOLID
+namespace DotNetDesignPatternDemos.SOLID
 {
     public enum Color
     {

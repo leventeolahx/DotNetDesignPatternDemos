@@ -67,5 +67,26 @@ Section 2: Builder
 - create a PersonBuilder which inherits from FunctionalBuilder<Person, PersonBuilder>
 
 16. Faceted Builder
+- create a Person class
+- create a PersonBuilder. this builder  is a facade for other builders so doesn't build up person itself
+- keeps a reference to the person that's being built up that's one thing
+- and second thing is it allows you access to those sub builders if you will
+- create a person reference
+
+- create a PersonJobBuilder and inherit from PersonBuilder
+- create a constructor with person param. Assign person to person (inherit)
+- add a PersonJobBuilder fluent interface methods
+
+- add Works variable typeOf PersonJobBuilder to PersonBuilder and you can 
+- instantiate a PersonBuilder in the main method and you can use Works and method's of Works
+- Works: PersonJobBuilder - is a faces, we are going to create another facet: Lives
+- create the same structure for Address (Lives)
+- use can use Lives on the pb instance
+
+- you can chain Lives and Works as all fluent interface methods return PersonBuilder. PersonBuilder has these fields.
+- side effect: you can e.g. chain Lives.Lives.Lives forever
+
+- create 'public static implicit operator Person(PersonBuilder pb)' and return person
+
 Coding Exercise 1: Builder Coding Exercise
 17. Summary

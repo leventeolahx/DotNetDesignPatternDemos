@@ -1,0 +1,20 @@
+Section 3: Factories
+18. Overview
+
+19. Point Example
+
+20. Factory Method
+
+21. Asynchronous Factory Method
+
+22. Factory
+
+23. Inner Factory
+
+24. Abstract Factory
+
+25. Abstract Factory and OCP
+
+Coding Exercise 2: Factory Coding Exercise
+
+26. Summary

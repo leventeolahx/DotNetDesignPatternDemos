@@ -19,6 +19,9 @@ namespace DotNetDesignPatternDemos
             //Builder.Start();
             //FluentBuilderInhWithRecGenerics.Start();
             // FunctionalBuilder.Start();
+            //FacetedBuilder.Start();
+            //BuilderCodeExcercise.Start();
+            BuilderCodeExcerciseByDmitri.Start();
         }
     }
 }

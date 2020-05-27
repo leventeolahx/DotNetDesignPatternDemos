@@ -1,5 +1,6 @@
 ﻿using System;
 using DotNetDesignPatternDemos.Creational.Builder;
+using DotNetDesignPatternDemos.Creational.Factory;
 using DotNetDesignPatternDemos.SOLID;
 
 namespace DotNetDesignPatternDemos
@@ -21,7 +22,11 @@ namespace DotNetDesignPatternDemos
             // FunctionalBuilder.Start();
             //FacetedBuilder.Start();
             //BuilderCodeExcercise.Start();
-            BuilderCodeExcerciseByDmitri.Start();
+            //BuilderCodeExcerciseByDmitri.Start();
+
+            // Factory
+            //PointExample.Start();
+            //AsynchronousFactotyMethod.Start();
         }
     }
 }

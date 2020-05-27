@@ -1,15 +1,64 @@
 Section 3: Factories
 18. Overview
+- object creation logic becomes too convoluted
+- constructor is not descriptive
+    - name mandated by name of containing type
+    - cannot overload with same sets of arguments with different names
+    - can turn into 'optional parameter hell'
+- object creation (unlike Builder) can be outsourced to: 
+    - separate function (Factory method)
+    - that may exist in a separate class (Factory)
+    - can create hierarchy of factories with Abstract Factories
+
+Factory: A component responsible solely for the wholesale (not piecewise) creation of object.
+
 
 19. Point Example
+- constructors are not that good
+
+- define a Point class and add constructor with two double params
+- you cannot define another constructor with two double params
+- to can have a cartesian or polar coordinate we have to introduce a new enum and a switch in the constructor
 
 20. Factory Method
+- create a factory static method out of constructor
+- the constructor is private now, available for internal use within the class
+- the create method name will be NewCartesian Point with two double params
+- return a new Point (x, y)
+- you can create as many factory method as you want
 
 21. Asynchronous Factory Method
+- create a Foo class
+- you cannot make the constructor as async
+
+- what you can do is to create an InitAsync method and for asynchronous init
+- then you have to initiate a Foo instance and call the InitAsync method
+- this is not the best solution as could forget to call InitAsync
+
+- to fix this: make the constructor private
+- make InitAsync private as well
+- create an async method: public static Task<Foo> CreateAsync()
+- inside this method: create a new Foo instance and return the result.InitAsync()
+- use it like: await Foo.CreateAsync();
+
+- this way we ensure that the consumer initializes the object fully 
 
 22. Factory
+- create a PointFactory class and move the factory methods NewCartesianPoint and NewPolarPoint
+- now we have a bunch of problems as we made the constructor private
+
+- a factory is just a separate component which knows how to initialize types in a particular way
 
 23. Inner Factory
+- you can use internal for the constructor so it will be accessible only inside the assembly
+
+- put the PointFactory class inside the Point class (it will be an inner class)
+- rename it to Factory
+
+- (you can rewrite the code to not use static Factory and make in instance inside the Point class)
+
+- factory property: public static Point Origin => new Point(0, 0);
+- singleton field: public static Point Origin2 = new Point(0, 0);
 
 24. Abstract Factory
 

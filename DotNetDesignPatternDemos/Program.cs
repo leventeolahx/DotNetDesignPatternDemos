@@ -27,6 +27,8 @@ namespace DotNetDesignPatternDemos
             // Factory
             //PointExample.Start();
             //AsynchronousFactotyMethod.Start();
+            //AbstractFactory.Start();
+            //FactoryCodeExcecise.Start();
         }
     }
 }

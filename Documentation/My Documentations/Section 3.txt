@@ -61,9 +61,47 @@ Factory: A component responsible solely for the wholesale (not piecewise) creati
 - singleton field: public static Point Origin2 = new Point(0, 0);
 
 24. Abstract Factory
+- create an IHotDrink interface with Consume method
+- create a Tea internal class which implements IHotDrink
+- create a same Coffee class
+
+- create IHotDrinkFactory interface
+- add IHotDrink type method: Prepare
+- create Tea and Coffee Factories which implements IHotDrinkFactory
+- return Tea or Coffee in the Prepare method as both implements IHotDrink
+
+- create HotDrinkMachine class
+- add enum AvailableDrink
+
+- create a dictionary for IHotDrinkFactory: private Dictionary<AvailableDrink, IHotDrinkFactory> factories 
+- initialize this dictionary in the constructor, loop through all enums and add it to the dictionary, create a factory for every drink
+- create public IHotDrink MakeDrink(AvailableDrink drink, int amount) and return the factory.Prepare
 
 25. Abstract Factory and OCP
+- by using an enum inside HotDrinkMachine we violated OCP (open close principle)
+- we can get the available factories by using reflections: foreach (var t in typeof(HotDrinkMachine).Assembly.GetTypes())
+- check if the t implements IHotDrinkFactory and it's not an interface: if (typeof(IHotDrinkFactory).IsAssignableFrom(t) && !t.IsInterface)
+
+- create a tuple to hold the factories: private List<Tuple<string, IHotDrinkFactory>> namedFactories
+- add the instances to the tuple, get t.Name and (IHotDrinkFactory)Activator.CreateInstance(t)
+- Activator.CreateInstance(t) - returns an object by default
+
+- this approach look in the assembly for all the different types of factories and add them to the list
+
+- create MakeDrink method
+- write the available drinks, make a while until the user selects the drink
+- read the amount of drink and Prepare it
+
+- in a more serious app, instead of having the object being collected through the reflection
+- you would have these objects automatically initialized by the dependency injection container
 
 Coding Exercise 2: Factory Coding Exercise
+- create a PersonFactory which has a CreatePerson method
+- return the new Person in the CreatePerson method
 
 26. Summary
+- a factory method is a static method that creates objects
+- a factory can take care of object creation
+- a factory can be external or reside inside the object as an inner class (both have pros and contras)
+- internal: can have access to the object private params and methods
+- hierarchies of factories can be used to create related objects

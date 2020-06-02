@@ -1,6 +1,7 @@
 ﻿using System;
 using DotNetDesignPatternDemos.Creational.Builder;
 using DotNetDesignPatternDemos.Creational.Factory;
+using DotNetDesignPatternDemos.Creational.Prototype;
 using DotNetDesignPatternDemos.SOLID;
 
 namespace DotNetDesignPatternDemos
@@ -29,6 +30,14 @@ namespace DotNetDesignPatternDemos
             //AsynchronousFactotyMethod.Start();
             //AbstractFactory.Start();
             //FactoryCodeExcecise.Start();
+
+            // Prototype
+            //ICloneableIsBad.Start();
+            //CopyConstructor.Start();
+            //DeepCopyInterface.Start();
+            //CopyThroughSerialization.Start();
+            //PrototypeCodeExcercise.Start();
+            //PrototypeCodeExcerciseByDmitri.Start();
         }
     }
 }

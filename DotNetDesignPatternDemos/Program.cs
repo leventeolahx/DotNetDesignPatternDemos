@@ -2,6 +2,7 @@
 using DotNetDesignPatternDemos.Creational.Builder;
 using DotNetDesignPatternDemos.Creational.Factory;
 using DotNetDesignPatternDemos.Creational.Prototype;
+using DotNetDesignPatternDemos.Creational.Singleton;
 using DotNetDesignPatternDemos.SOLID;
 
 namespace DotNetDesignPatternDemos
@@ -38,6 +39,9 @@ namespace DotNetDesignPatternDemos
             //CopyThroughSerialization.Start();
             //PrototypeCodeExcercise.Start();
             //PrototypeCodeExcerciseByDmitri.Start();
+
+            // Singleton
+            //SingletonImplementation.Start();
         }
     }
 }

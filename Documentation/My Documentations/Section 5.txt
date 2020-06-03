@@ -1,0 +1,50 @@
+Section 5: Singleton
+33. Overview
+- for some components it only makes sense to have one in the system 
+    - data repository
+    - object factory
+- the constructor call is expensive
+    - we only do it once
+    - we provide everyone with the same instance
+- want to prevent anyone creating additional copies
+- need to take care of lazy instantiation and thread safety
+- a component which is instantiated only once
+
+34. Singleton Implementation
+- define an interface IDatabase with a method GetPopulation
+- create a capitals.txt
+- add SingletonDatabase class
+- implement IDatabase interface
+- install more linq nuget package
+- define a capitals variable and read them from capitals.txt and create  dictionary out of it
+- implement GetPopulation method
+- make the constructor private so we make sure that nobody can instantiate it
+
+- crate a private static instance prop with instantiate SingletonDatabase and a public one which can be used
+- use it: var db = SingletonDatabase.Instance;
+- use Lazy<SingletonDatabase> - to only create the instance (in this case reade db) when somebody accesses the instance
+
+35. Testability Issues
+- install AutoFac from nuget
+- create a SingletonTest class with IsSingletonTest method. Add [TestFixture] and [Test] attributes
+- install NUnit nuget package
+
+- check whether only one instance is created: Assert.That(db, Is.SameAs(db2));
+- add instanceCount to SingletonDatabase as a prop and increment it when an instance is created
+
+- to test unittest right click on the test method and hit run
+
+- create a SingletonRecordFinder with a method
+- create a SingletonTotalPopulationTest Test method
+
+36. Singleton in Dependency Injection
+
+37. Monostate
+
+38. Per-Thread Singleton
+
+39. Ambient Context
+
+Coding Exercise 4: Singleton Coding Exercise
+
+40. Summary

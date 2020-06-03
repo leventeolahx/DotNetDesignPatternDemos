@@ -43,6 +43,9 @@ namespace DotNetDesignPatternDemos.Creational.Prototype
 
     public static class PrototypeCodeExcercise
     {
+        /// <summary>
+        /// Given the definitions above, you are asked to implement Line.DeepCopy()to perform a deep copy of the current Line object.
+        /// </summary>
         public static void Start()
         {
             var line = new Line(new Point(1, 1), new Point(6, 6));

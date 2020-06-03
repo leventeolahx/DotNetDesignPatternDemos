@@ -1,0 +1,60 @@
+Section 4: Prototype
+27. Overview
+- an existing object is a Prototype
+- we make a copy of the prototype and customize it
+- we need deep copy, means copying not just the object but copying all the object's references
+- prototype = A partially or fully initialized object that you copy (clone) and make use of it
+
+28. ICloneable is Bad
+- create a person class
+- create an address class
+- create constructors
+- instantiate a new person in start method
+- create a jane object out of john and modify the name. This will be changed in all the places as we use reference
+- dotnet has an Interface: ICloneable
+
+- the problem with ICloneable is that you never know whether it's copied deeply or shallowly - dotnet has an Interface: ICloneable
+
+- implement ICloneable Interface
+- create a new object in the clone method, by adding the persons address and names, this lead to the same problem as it's not deeply copied
+- we can fix it by copying the address separately, creating a clone method to address class as well. But this is dangerous
+
+29. Copy Constructors
+- c++ term, let's you specify an object to copy all the data from
+- c++ term, let's you specify an object to copy all the data from
+- create a constructor of person which takes another person param
+- Name = other.Names...
+- in address class create the same copy constructor.
+- initialize it in start, new Person(john)
+
+30. Explicit Deep Copy Interface
+- create a IPrototype interface with DeepCopy method
+- add the interface to the classes
+- implement DeepCopy for all the classes and return a new object in the method
+- call DeepCopy in the start method
+
+31. Copy Through Serialization
+- create ExtensionMethods
+- add DeepCopy method - this uses the binary serializer
+- create a memoryStream
+- use a binaryFormatter
+- serialize the param using formatter into stream
+- to get the object out of the stream we have to rebind the stream to the beginning
+- deserialize the object from the stream
+- close the stream and return the object
+- [Serializable] - needs to be added to all the classes using binary formatter deep copy
+
+- create DeepCopyXml method
+- using memoryStream, create a new XmlSerialized, serialize it to memoryStream, put the memoryStream to the beginning
+- return s.Deserialize(ms)
+- for XmlSerialized we have to have paramsless constructor
+
+Coding Exercise 3: Prototype Coding Exercise
+
+32. Summary
+- create a point class and a line class, add DeepCopy method to line class and return new Line
+- to implement a prototype, partially construct an object and store it somewhere
+- clone the prototype: 
+    - implement your own deep copy functionality; or 
+    - serialize and deserialize the object
+- customize the resulting instance

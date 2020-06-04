@@ -42,6 +42,11 @@ namespace DotNetDesignPatternDemos
 
             // Singleton
             //SingletonImplementation.Start();
+            //SingletonInDependencyInjection.Start();
+            //Monostate.Start();
+            //PerThreadSingleton38.Start();
+            //AmbientContext.Start();
+            //SingletonCodeExcercise.Start();
         }
     }
 }

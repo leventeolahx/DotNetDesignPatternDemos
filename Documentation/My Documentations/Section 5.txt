@@ -20,7 +20,7 @@ Section 5: Singleton
 - implement GetPopulation method
 - make the constructor private so we make sure that nobody can instantiate it
 
-- crate a private static instance prop with instantiate SingletonDatabase and a public one which can be used
+- create a private static instance prop with instantiate SingletonDatabase and a public one which can be used
 - use it: var db = SingletonDatabase.Instance;
 - use Lazy<SingletonDatabase> - to only create the instance (in this case reade db) when somebody accesses the instance
 
@@ -38,13 +38,67 @@ Section 5: Singleton
 - create a SingletonTotalPopulationTest Test method
 
 36. Singleton in Dependency Injection
+- create a class ConfigurableRecordFinder and initialize a database in the constructor 
+- create a class DummyDatabase and add method GetPopulation
+- add a new test method: DependantTotalPopulationTest
+
+- create a class OrdinaryDatabase
+- same method as in SingletonDatabase but at this is not going to have instance props
+
+- create a DIPopulationTest test method
+- use var cb = new ContainerBuilder(); from AutoFac
+- cb.RegisterType<OrdinaryDatabase>().As<IDatabase>().SingleInstance(); - register OrdinaryDatabase
+
+- whenever somebody request IDatabase we are going to give them OrdinaryDatabase as a single instance
+
+- build the container: using (var c = cb.Build())
+- var rf = c.Resolve<ConfigurableRecordFinder>();
 
 37. Monostate
+- Monostate pattern tries to use static fields in a weird way
+- create a class ChiefExecutiveOfficer
+- add name and age private static fields
+- add Name and Age public fields
+
+- create two instances of ChiefExecutiveOfficer in main 
+- even though they are separate objects they both refer to the same data as the properties that they expose map to static fields
 
 38. Per-Thread Singleton
+- we were looking over Lazy<T> - this gave us thread safety on instantiation
+- having one Singleton per the entire app the main as you would with a lazy object you can instead have one Singleton per thread
+
+- create a class PerThreadSingleton
+- as a private constructor
+- add a private variable: private static ThreadLocal<PerThreadSingleton> threadInstance  - same as with Lazy<T>
+- return the instance in a public filed: public static PerThreadSingleton Instance => threadInstance.Value;
+
+- create two threads var t1 = Task.Factory.StartNew(() => {});
 
 39. Ambient Context
+- create classes: Building, Wall, Point
+- add constructor to Wall
+
+- create a new Building install in main
+- define the walls in the ground floor and in the 1st floor
+- wall height are the same in every floor, on solution is to set a height for every wall
+
+- the walls have the same value for every single group of walls
+
+- create a class BuildingContext and add a static value WallHeight
+- we would need some sort of scope to change the value to when reaches a group of code and set the value back when finishes
+- public sealed class BuildingContext : IDisposable
+- add: private static Stack<BuildingContext> stack = new Stack<BuildingContext>();
+- add a static constructor and add stack.Push(new BuildingContext(0));
+- create a proper constructor which initializes the wall height
+- we also need to add 'this' to the stack: stack.Push(this);
+- create a stack accessor: public static BuildingContext Current => stack.Peek();
+- on dispose method: if (stack.Count > 1) stack.Pop();
 
 Coding Exercise 4: Singleton Coding Exercise
+- solution: var obj1 = func(); var obj2 = func(); return ReferenceEquals(obj1, obj2);
 
 40. Summary
+- making a 'safe' singleton is easy: construct a static Lazy<T> and return its Value
+- singletons are difficult to test
+- instead of directly using a singleton, consider depending on an abstraction (e.g., an interface)
+- consider defining singleton lifetime in DI container

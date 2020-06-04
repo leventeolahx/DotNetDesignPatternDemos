@@ -5,6 +5,7 @@ using System.Linq;
 using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
+using Autofac;
 using MoreLinq;
 using NUnit.Framework;
 
@@ -50,6 +51,33 @@ namespace DotNetDesignPatternDemos.Creational.Singleton
         public static IDatabase Instance => instance.Value;
     }
 
+    /// <summary>
+    /// part of lecture 36
+    /// </summary>
+    public class OrdinaryDatabase : IDatabase
+    {
+        private Dictionary<string, int> capitals;
+
+        private OrdinaryDatabase()
+        {
+            Console.WriteLine("Initializing database");
+
+            capitals = File.ReadAllLines(
+              Path.Combine(
+                new FileInfo(typeof(IDatabase).Assembly.Location).DirectoryName, "capitals.txt")
+              )
+              .Batch(2)
+              .ToDictionary(
+                list => list.ElementAt(0).Trim(),
+                list => int.Parse(list.ElementAt(1)));
+        }
+
+        public int GetPopulation(string name)
+        {
+            return capitals[name];
+        }
+    }
+
     public class SingletonRecordFinder
     {
         public int TotalPopulation(IEnumerable<string> names)
@@ -61,36 +89,42 @@ namespace DotNetDesignPatternDemos.Creational.Singleton
         }
     }
 
-    //public class ConfigurableRecordFinder
-    //{
-    //    private IDatabase database;
+    /// <summary>
+    /// part of lecture 36
+    /// </summary>
+    public class ConfigurableRecordFinder
+    {
+        private IDatabase database;
 
-    //    public ConfigurableRecordFinder(IDatabase database)
-    //    {
-    //        this.database = database;
-    //    }
+        public ConfigurableRecordFinder(IDatabase database)
+        {
+            this.database = database;
+        }
 
-    //    public int GetTotalPopulation(IEnumerable<string> names)
-    //    {
-    //        int result = 0;
-    //        foreach (var name in names)
-    //            result += database.GetPopulation(name);
-    //        return result;
-    //    }
-    //}
+        public int GetTotalPopulation(IEnumerable<string> names)
+        {
+            int result = 0;
+            foreach (var name in names)
+                result += database.GetPopulation(name);
+            return result;
+        }
+    }
 
-    //public class DummyDatabase : IDatabase
-    //{
-    //    public int GetPopulation(string name)
-    //    {
-    //        return new Dictionary<string, int>
-    //        {
-    //            ["alpha"] = 1,
-    //            ["beta"] = 2,
-    //            ["gamma"] = 3
-    //        }[name];
-    //    }
-    //}
+    /// <summary>
+    /// part of lecture 36
+    /// </summary>
+    public class DummyDatabase : IDatabase
+    {
+        public int GetPopulation(string name)
+        {
+            return new Dictionary<string, int>
+            {
+                ["alpha"] = 1,
+                ["beta"] = 2,
+                ["gamma"] = 3
+            }[name];
+        }
+    }
 
 
     /// <summary>
@@ -118,15 +152,33 @@ namespace DotNetDesignPatternDemos.Creational.Singleton
             Assert.That(tp, Is.EqualTo(17500000 + 17400000));
         }
 
-        //[Test]
-        //public void DependantTotalPopulationTest()
-        //{
-        //    var db = new DummyDatabase();
-        //    var rf = new ConfigurableRecordFinder(db);
-        //    Assert.That(
-        //      rf.GetTotalPopulation(new[] { "alpha", "gamma" }),
-        //      Is.EqualTo(4));
-        //}
+        /// <summary>
+        /// part of lecture 36
+        /// </summary>
+        [Test]
+        public void DependantTotalPopulationTest()
+        {
+            var db = new DummyDatabase();
+            var rf = new ConfigurableRecordFinder(db);
+            Assert.That(
+              rf.GetTotalPopulation(new[] { "alpha", "gamma" }),
+              Is.EqualTo(4));
+        }
+
+        /// <summary>
+        /// part of lecture 36
+        /// </summary>
+        [Test]
+        public void DIPopulationTest()
+        {
+            var cb = new ContainerBuilder();
+            cb.RegisterType<OrdinaryDatabase>().As<IDatabase>().SingleInstance();
+            cb.RegisterType<ConfigurableRecordFinder>();
+            using (var c = cb.Build())
+            {
+                var rf = c.Resolve<ConfigurableRecordFinder>();
+            }
+        }
     }
 
 

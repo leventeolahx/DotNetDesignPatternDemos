@@ -1,0 +1,29 @@
+41. Overview
+- getting the interface you want from the interface you have
+- it's like the electrical devices adapters
+- a constructor which adapts an existing interface X to conform to the required interface Y
+
+42. Vector/Raster Demo
+- create a class Point and create a static a static DrawPoint method
+- create a class Line, VectorObject, Rectangle
+- create a static vectorObjects (suppose we get it from another api)
+- create a LineToPointAdapter class
+- create the constructor and convert Line to Points collection
+- call it in the Main method
+
+43. Adapter Caching
+- add a static Dictionary cache
+- generate Equals method for Line and Point classes
+- generate GetHashCode for both classes
+- get the hashCode of the line, and if the cache already contains the hash code we return it as we already have it
+- create a point list and and add the new point to the list every time. At the end of the constructor add the points to the cache
+- change LineToPointAdapter to inherit from IEnumerator and implement GetEnumerator methods
+- return the points
+
+44. Generic Value Adapter
+
+45. Adapter in Dependency Injection
+
+Coding Exercise 5: Adapter Coding Exercise
+
+46. Summary

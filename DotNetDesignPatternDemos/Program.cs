@@ -4,6 +4,7 @@ using DotNetDesignPatternDemos.Creational.Factory;
 using DotNetDesignPatternDemos.Creational.Prototype;
 using DotNetDesignPatternDemos.Creational.Singleton;
 using DotNetDesignPatternDemos.SOLID;
+using DotNetDesignPatternDemos.Structural;
 
 namespace DotNetDesignPatternDemos
 {
@@ -17,6 +18,9 @@ namespace DotNetDesignPatternDemos
             //LiskovSubtitutionPrinciple.Start();
             //InterfaceSegregationPrinciple.Start();
             //DependencyInversionPrinciple.Start();
+
+
+            /* Creational */
 
             // Builder
             //Builder.Start();
@@ -47,6 +51,12 @@ namespace DotNetDesignPatternDemos
             //PerThreadSingleton38.Start();
             //AmbientContext.Start();
             //SingletonCodeExcercise.Start();
+
+
+
+            /* Structural */
+            //VectorRasterDemo.Start();
+            //AdapterCaching.Start();
         }
     }
 }

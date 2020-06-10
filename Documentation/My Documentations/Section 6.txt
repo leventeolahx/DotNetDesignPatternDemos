@@ -21,9 +21,35 @@
 - return the points
 
 44. Generic Value Adapter
+- we adapt a literal Value to a type
+- create an interface IInteger
+- create a class Two which inherits from IInteger, also a class for Three
+- create a class Vector<T, D>: where D: IInteger, new()
+- create te constructor and set the data:  data = new T[new D().Value];
+- create a Vector2i class and inherit from Vector<int, Two>
+- add this and X getter and setter to Vector class
+- add a new constructor Vector(params T[] values)
+- create a class VectorOfInt: Vector<int, D>: where D: IInteger, new()
+- create two constructors and an operator+ static method
+- change Vector2i to  public class Vector2i : VectorOfInt<Dimensions.Two>
+- create a Vector3f: VectorOfFloat. also create VectorOfFloat(see VectorOfInt)
+
+- create a Create method in Vector class
+- instead of return a T class return TSelf
+- add TSelf to to Vector -> where TSelf: Vector<TSelf, T, D>, new()
+- we have to adjust VectorOfFloat to support Recursive generics
+- add TSelf to VectorOfFloat
 
 45. Adapter in Dependency Injection
-
+- add interface ICommand and class SaveFile and OpenCommand
+- create a Button class, with constructor an click method
+- create a builder: var b = new ContainerBuilder();
+- create a class Editor with buttons an ClickAll method
+- register Button and Editor
+- build the builder and Resolve<Editor>
+- tell autofac that we want to use the register as an adapter:  b.RegisterAdapter<ICommand, Button>(cmd => new Button(cmd, ""));
+- add a PrintMe method to Button class
+- we added metadata support:  b.RegisterAdapter<Meta<ICommand>, Button>(cmd => new Button(cmd.Value, (string)cmd.Metadata["Name"]));
 Coding Exercise 5: Adapter Coding Exercise
 
 46. Summary

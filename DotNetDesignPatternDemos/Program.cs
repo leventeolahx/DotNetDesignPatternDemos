@@ -57,6 +57,8 @@ namespace DotNetDesignPatternDemos
             /* Structural */
             //VectorRasterDemo.Start();
             //AdapterCaching.Start();
+            //GenericValueAdapter.Start();
+            AdapterInDependencyInjection.Start();
         }
     }
 }

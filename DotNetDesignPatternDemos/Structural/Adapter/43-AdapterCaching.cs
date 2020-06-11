@@ -6,7 +6,7 @@ using System.Linq;
 using MoreLinq;
 using NUnit.Framework;
 
-namespace DotNetDesignPatternDemos.Structural
+namespace DotNetDesignPatternDemos.Structural.Adapter
 {
     public class Point43
     {

@@ -1,0 +1,27 @@
+47. Overview
+- prevents a 'Cartesian product' complexity explosion:
+- e.g: when you have a base class and which can run on windows or Unix. We end up to have define more classes
+- bridge patter avoids the entity explosion
+
+- a mechanism that decouples an interface (hierarchy) from an implementation (hierarchy)
+
+48. Bridge
+- create an interface: IRenderer. Add a VectorRenderer and RasterRenderer classes which inherits from IRenderer
+- create a Shape abstract class
+- add a protected IRenderer and a protected constructor
+- add abstract methods: Draw and Resize
+- create a Circle class and inherit from Shape
+- add constructor with all the fields
+
+- var vector = new VectorRenderer(); var circle = new Circle(vector, 5, 5, 5); circle.Draw();
+
+- use it in dependency injection
+- cb.Register((c, p) => new Circle(c.Resolve<IRenderer>(), p.Positional<float>(0)));
+- build the container and use it
+
+Coding Exercise 6: Bridge Coding Exercise
+
+49. Summary
+- decouple abstraction from implementation
+- both can exist as hierarchies
+- stronger form of encapsulation

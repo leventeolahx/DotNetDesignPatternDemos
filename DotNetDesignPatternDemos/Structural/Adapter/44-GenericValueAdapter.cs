@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace DotNetDesignPatternDemos.Structural
+namespace DotNetDesignPatternDemos.Structural.Adapter
 {
     // Vector2f, Vector3i
 

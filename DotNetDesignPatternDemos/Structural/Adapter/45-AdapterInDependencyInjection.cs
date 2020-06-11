@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using Autofac;
 using Autofac.Features.Metadata;
 
-namespace DotNetDesignPatternDemos.Structural
+namespace DotNetDesignPatternDemos.Structural.Adapter
 {
     public interface ICommand
     {

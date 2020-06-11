@@ -4,7 +4,7 @@ using System.Collections.ObjectModel;
 using System.Text;
 using MoreLinq;
 
-namespace DotNetDesignPatternDemos.Structural
+namespace DotNetDesignPatternDemos.Structural.Adapter
 {
     public class Point
     {

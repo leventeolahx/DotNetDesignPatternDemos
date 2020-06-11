@@ -5,6 +5,8 @@ using DotNetDesignPatternDemos.Creational.Prototype;
 using DotNetDesignPatternDemos.Creational.Singleton;
 using DotNetDesignPatternDemos.SOLID;
 using DotNetDesignPatternDemos.Structural;
+using DotNetDesignPatternDemos.Structural.Adapter;
+using DotNetDesignPatternDemos.Structural.Bridge;
 
 namespace DotNetDesignPatternDemos
 {
@@ -55,10 +57,17 @@ namespace DotNetDesignPatternDemos
 
 
             /* Structural */
+
+            // Adapter
             //VectorRasterDemo.Start();
             //AdapterCaching.Start();
             //GenericValueAdapter.Start();
-            AdapterInDependencyInjection.Start();
+            //AdapterInDependencyInjection.Start();
+            //AdapterCodingExercise.Start();
+
+            // Bridge
+            //Bridge.Start();
+            BridgeCodingExercise.Start();
         }
     }
 }

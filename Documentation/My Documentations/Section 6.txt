@@ -50,6 +50,10 @@
 - tell autofac that we want to use the register as an adapter:  b.RegisterAdapter<ICommand, Button>(cmd => new Button(cmd, ""));
 - add a PrintMe method to Button class
 - we added metadata support:  b.RegisterAdapter<Meta<ICommand>, Button>(cmd => new Button(cmd.Value, (string)cmd.Metadata["Name"]));
+
 Coding Exercise 5: Adapter Coding Exercise
 
 46. Summary
+- determine the api you have and the api you need
+- create a component which aggregates the adapter
+- intermediate representations can pile up: use caching and other optimizations

@@ -7,6 +7,7 @@ using DotNetDesignPatternDemos.SOLID;
 using DotNetDesignPatternDemos.Structural;
 using DotNetDesignPatternDemos.Structural.Adapter;
 using DotNetDesignPatternDemos.Structural.Bridge;
+using DotNetDesignPatternDemos.Structural.Composite;
 
 namespace DotNetDesignPatternDemos
 {
@@ -67,7 +68,13 @@ namespace DotNetDesignPatternDemos
 
             // Bridge
             //Bridge.Start();
-            BridgeCodingExercise.Start();
+            //BridgeCodingExercise.Start();
+
+            // Composite
+            //GeometricShapes.Start();
+            //NeuralNetworks.Start();
+            //CompositeSpecification.Start();
+            CompositeCodeExcercise.Start();
         }
     }
 }

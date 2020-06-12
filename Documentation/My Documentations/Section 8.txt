@@ -1,0 +1,45 @@
+Section 8: Composite
+50. Overview
+- objects typically use other objects fields or properties or members through inheritance and composition
+- composition lets us make compound objects
+    - e.g.: a grouping of shapes that consists of several shapes
+- composite design pattern is used to treat both single (scalar) and composite objects uniformly
+- a mechanism for treating individual (scalar) objects and compositions of objects in a uniform manner
+
+51. Geometric Shapes
+- create a base class GraphicObject and a Circle and Square normal classes
+- create a virtual property: Name
+- private Lazy<List<GraphicObject>> children = new Lazy<List<GraphicObject>>();
+- override the names in the child classes
+- create Print and ToString methods
+
+- in main: var drawing = new GraphicObject { Name = "My Drawing" };
+
+52. Neural Networks
+- create a class Neuron and add connectTo method
+
+- create a new class NeuronLayer: Collection<Neuron>
+
+- implement IEnumerable for Neuron class
+- GetEnumerator() { yield return this;}
+
+- create an new class ExtensionMethods
+- more connectTo method to ExtensionMethods
+
+53. Composite Specification
+- extend the example 4 from SOLID
+- make ISpecification interface to be an abstract class and add & operator
+- create a compositeSpecification class and inherit from ISpecification
+- add the constructor with params ISpecification<T>[] items
+- rewrite AndSpecification class to inherit from compositeSpecification class
+- create the constructor with base(items)
+- change IsSatisfied to check all
+
+Coding Exercise 7: Composite Coding Exercise
+
+54. Summary
+- objects can use other object via inheritance/composite
+- some composed and singular objects need similar/identical behaviors
+- composite design pattern lets us treat both types of object uniformly
+- C# has special support for the enumeration concept
+- a single object can masquerade as a collection with yield return this

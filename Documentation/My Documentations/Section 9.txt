@@ -1,0 +1,57 @@
+Section 9: Decorator
+55. Overview
+- adding behavior without altering the class itself
+- want to augment an object with additional functionality
+- do not want to rewrite or alter existing code (OCP)
+- want to keep new functionality separate (SRP)
+- need to be able to interact with existing structures
+- two options :
+    - inherit from required object if possible; some objects are sealed
+    - build a Decorator, which simply references the decorated object(s)
+
+- facilitates the addition of behaviors to individual objects without inheriting from them
+
+56. Custom String Builder
+- create a CodeBuilder class and add a private StringBuilder
+- generate the delegate members (re-sharper)
+- change StringBuilder to CodeBuilder
+- replace return.builder.(.+)$ with builder.$1\nreturn this;
+- implement a toSting method
+- create a new CodeBuilder in main and use it with AppendLine
+
+57. Adapter-Decorator
+- string are immutable, so when you do a += it's not like you're adding the word to the word 'hello', but you're reassigning a the string, making a new string
+- we are going to make a decorator so we can refactor the string to String and to be able to use +=
+- create a MyStringBuilder class and add a StringBuilder field and generate the members
+
+- create a: public static implicit operator MyStringBuilder(string s)
+- return a MyStringBuilder which contains now s
+
+- add a static MyStringBuilder operator +
+
+- add a ToString method
+
+58. Multiple Inheritance with Interfaces
+- add a class Bird with fly method and a Lizard class with crawl method
+- create interface out of both classes
+
+- create a Dragon class which inherits from both
+- initialize a Bird and Lizard members in Dragon class and their methods
+
+- add Weight to both base classes and add it to the interfaces
+- add public int Weight { get; set; } to the Dragon class
+
+- if we set the Weight param before calling the methods his value become 0 as we only set the weight in origin Dragon
+- create a weight private param and set it in the Weight, also set bird and lizard weights
+
+59. Multiple Inheritance with Default Interface Members
+
+60. Dynamic Decorator Composition
+
+61. Static Decorator Composition
+
+62. Decorator in Dependency Injection
+
+Coding Exercise 8: Decorator Coding Exercise
+
+63. Summary

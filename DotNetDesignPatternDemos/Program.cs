@@ -8,6 +8,7 @@ using DotNetDesignPatternDemos.Structural;
 using DotNetDesignPatternDemos.Structural.Adapter;
 using DotNetDesignPatternDemos.Structural.Bridge;
 using DotNetDesignPatternDemos.Structural.Composite;
+using DotNetDesignPatternDemos.Structural.Decorator;
 
 namespace DotNetDesignPatternDemos
 {
@@ -74,7 +75,12 @@ namespace DotNetDesignPatternDemos
             //GeometricShapes.Start();
             //NeuralNetworks.Start();
             //CompositeSpecification.Start();
-            CompositeCodeExcercise.Start();
+            //CompositeCodeExcercise.Start();
+
+            // Decorator
+            //CustomStringBuilder.Start();
+            //AdapterDecorator.Start();
+            MultipleInheritanceWithInterfaces.Start();
         }
     }
 }

@@ -45,8 +45,21 @@ Section 9: Decorator
 - create a weight private param and set it in the Weight, also set bird and lizard weights
 
 59. Multiple Inheritance with Default Interface Members
+- create an interface ICreature and IBird
+- IBird inherits from ICreature and has a default Fly method
+- create the same with ILizard
+- create a Dragon class an inherit from ICreature
+- instantiate a new Dragon in main
+- to can access a default interface method you have more possibilities
+    - cast the variable
+    - if (d is IBird59 bird) bird.Fly();
 
 60. Dynamic Decorator Composition
+- create an IShape interface
+- create a Circle class with Resize method and implement IShape interface
+- create a square: IShape
+- create a class ColoredShape: IShape with IShape and color private fields
+- create a class TransparentShape: IShape
 
 61. Static Decorator Composition
 

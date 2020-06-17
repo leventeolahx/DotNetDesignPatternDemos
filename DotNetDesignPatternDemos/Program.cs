@@ -80,7 +80,9 @@ namespace DotNetDesignPatternDemos
             // Decorator
             //CustomStringBuilder.Start();
             //AdapterDecorator.Start();
-            MultipleInheritanceWithInterfaces.Start();
+            //MultipleInheritanceWithInterfaces.Start();
+            //MultipleInheritanceWithDefaultInterfaceMembers.Start();
+            DynamicDecoratorComposition.Start();
         }
     }
 }

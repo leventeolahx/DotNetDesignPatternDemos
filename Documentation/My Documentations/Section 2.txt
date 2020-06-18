@@ -89,4 +89,9 @@ Section 2: Builder
 - create 'public static implicit operator Person(PersonBuilder pb)' and return person
 
 Coding Exercise 1: Builder Coding Exercise
+
 17. Summary
+- builder is a separate component whose purpose is to build up a particular object
+- can either give builder a constructor or return it via a static function
+- to make fluent, return this
+- different facets of an object can be built with different builders working in tandem via a base class

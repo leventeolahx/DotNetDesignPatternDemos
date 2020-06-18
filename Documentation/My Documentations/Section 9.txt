@@ -62,9 +62,29 @@ Section 9: Decorator
 - create a class TransparentShape: IShape
 
 61. Static Decorator Composition
+- refactor the interface to abstract class -> Shape
+- create a class public class ColoredShape<T> : Shape where T : Shape, new()
+- add constructors
+- add constructors to Square as well and Circle as well
+- create a class: TransparentShape<T> : Shape where T : Shape, new()
+- create constructors
 
 62. Decorator in Dependency Injection
+- create a interact IReportService
+- create a class which implements IReportService
+- create a class ReportingServiceWithLogging
+- add a field decorator
+
+- start: register ReportingService
+- b.RegisterDecorator<IReportingService>((context, service) => new ReportingServiceWithLogging(service), "reporting")
+- means what exactly we are going to be using when we resolve the dependencies of the reporting service ReportingServiceWithLogging
 
 Coding Exercise 8: Decorator Coding Exercise
 
 63. Summary
+- a decorator keeps a reference to the decorated object(s)
+- may or may not proxy over calls
+    -  R# generate delegate members
+- exists in a static variation
+    - X<Y<Foo>>
+    - very limited due to inability to inherit from type parameters

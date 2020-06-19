@@ -9,6 +9,7 @@ using DotNetDesignPatternDemos.Structural.Adapter;
 using DotNetDesignPatternDemos.Structural.Bridge;
 using DotNetDesignPatternDemos.Structural.Composite;
 using DotNetDesignPatternDemos.Structural.Decorator;
+using DotNetDesignPatternDemos.Structural.Facade;
 
 namespace DotNetDesignPatternDemos
 {
@@ -84,7 +85,10 @@ namespace DotNetDesignPatternDemos
             //MultipleInheritanceWithDefaultInterfaceMembers.Start();
             //DynamicDecoratorComposition.Start();
             //DecoratorinDependencyInjection.Start();
-            DecoratorCodingExercise.Start();
+            //DecoratorCodingExercise.Start();
+
+            // Facade
+            FacadeCodingExercise.Start();
         }
     }
 }

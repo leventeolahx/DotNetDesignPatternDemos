@@ -1,0 +1,14 @@
+Section 10: Façade
+64. Overview
+- Exposing several components through a single interface
+- Provides a simple, easy to understand/user interface over a large and sophisticated body of code
+
+65. Façade
+- https://github.com/ActiveMesa/MdxConsole/tree/master/MdxConsole
+
+Coding Exercise 9: Facade Coding Exercise
+
+66. Summary
+- Build a Facade to provide a simplified API over a set of classes
+- may wish to (optionally) expose internals through the Facade
+- may allow users to 'escalate' to use more complex APIs if they need to

@@ -85,7 +85,7 @@ namespace DotNetDesignPatternDemos.Creational.Factory
     {
         public static void Start() 
         {
-            // this is the old way to do it, with out factory
+            // this is the old way to do it, without factory
             var p1 = new Point(2, 3, Point.CoordinateSystem.Cartesian);
 
             // access the factory property

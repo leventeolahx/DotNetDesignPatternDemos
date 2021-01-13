@@ -86,10 +86,10 @@ namespace DotNetDesignPatternDemos.Structural.Adapter
     public class VectorRasterDemo
     {
         private static readonly List<VectorObject> vectorObjects = new List<VectorObject>
-    {
-      new VectorRectangle(1, 1, 10, 10),
-      new VectorRectangle(3, 3, 6, 6)
-    };
+        {
+          new VectorRectangle(1, 1, 10, 10),
+          new VectorRectangle(3, 3, 6, 6)
+        };
 
         // the interface we have
         public static void DrawPoint(Point p)

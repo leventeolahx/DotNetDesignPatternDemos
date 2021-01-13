@@ -1,21 +1,10 @@
-﻿using System;
-using DotNetDesignPatternDemos.Creational.Builder;
-using DotNetDesignPatternDemos.Creational.Factory;
-using DotNetDesignPatternDemos.Creational.Prototype;
-using DotNetDesignPatternDemos.Creational.Singleton;
-using DotNetDesignPatternDemos.SOLID;
-using DotNetDesignPatternDemos.Structural;
-using DotNetDesignPatternDemos.Structural.Adapter;
-using DotNetDesignPatternDemos.Structural.Bridge;
-using DotNetDesignPatternDemos.Structural.Composite;
-using DotNetDesignPatternDemos.Structural.Decorator;
-using DotNetDesignPatternDemos.Structural.Facade;
+﻿using DotNetDesignPatternDemos.Structural.Flyweight;
 
 namespace DotNetDesignPatternDemos
 {
-    class Program
+    internal class Program
     {
-        static void Main(string[] args)
+        private static void Main(string[] args)
         {
             // SOLID
             //SingleRepositoryPrinciple.Start();
@@ -88,7 +77,12 @@ namespace DotNetDesignPatternDemos
             //DecoratorCodingExercise.Start();
 
             // Facade
-            FacadeCodingExercise.Start();
+            //FacadeCodingExercise.Start();
+
+            //Flyweight
+            //RepeatingUserNames.Start();
+            //TextFormatting.Start();
+            FlyweightExercise.Start();
         }
     }
 }

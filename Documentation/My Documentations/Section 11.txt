@@ -1,0 +1,45 @@
+Section 11: Flyweight
+67. Overview
+- avoid redundancy when storing data
+- e.g. MMORPG 
+    - plenty of users with identical first/ last names
+    - no sense in storing them over and over again
+    - store a list of names and pointers to them
+-.NET performs string interning, so an identical string is stored only once
+- E.g. bold or italic text in the code
+    - don't want each characters to have a formatting character
+    - operate on ranges (e.g., line number, start/end positions)
+
+- A space optimization technique that lets us use less memory by storing externally the data associated with similar objects
+
+68. Repeating User Names
+- create a User class
+- install JetBrains.dotMemoryUnit from nuget
+- add Demo class and add TestUser generate method
+- generate first and last names
+- add force garbage collection method
+- check how much memory we have: dotMemory.Check
+
+- create User2 class
+- add a static list strings
+- create the constructor and add a method inside it: getOrAdd
+- store the indexes in the names variable
+
+
+69. Text Formatting
+- create FormattedText class
+- create a bool array capitalize
+- create a capitalize method
+    - set capitalize bool from start to end
+- we spend a lot of memory with this approach
+
+- create a betterFormatterText class with plaintext string and formatting list of formattings
+- create a class TextRange with int (start, end) and bool (capitalize) props
+- create a Covers method
+- create a GetRange method, initialize a TextRange class and add it to formatting list
+- implement a toString method
+
+
+Coding Exercise 10: Flyweight Coding Exercise
+
+70. Summary

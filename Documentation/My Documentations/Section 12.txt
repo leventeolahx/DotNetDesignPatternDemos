@@ -1,0 +1,47 @@
+Section 12: Proxy
+72. Overview
+- a class which functions as an interface to a particular resource.
+- so that resource it may be remote it may be expensive to construct,
+- or it may require logging or some other added functionality
+
+73. Protection Proxy
+- Protection Proxy is something which checks whether you have the right to call a particular method
+- or whether you have the right to access a particular value
+
+- so what we do is we make a CarProxy
+- and the car proxy something which has the same interface as a car but performs additional checks.
+- create a Driver class and add it to the CarProxy constructor
+- check the age in the drive method
+
+- so this is an example of a protection proxy
+- but also you can check whether the current user has the access rights to call a particular method
+- or to access a particular rest or resource.
+
+74. Property Proxy
+- a probably the proxy is basically the idea of using an object as a property instead of just a literal value.
+- add a Property class with a T value and a constructor (: this(Activator.CreateInstance<T>()))
+- default(T) = null, that's why we use the Activator
+- add a public Value. Only set if it's not equal
+- add an operator
+- generate the equality members
+
+- create a Creature class
+
+
+75. Value Proxy
+
+76. Composite Proxy: SoA/AoS
+
+77. Composite Proxy with Array-Backed Properties
+
+78. Dynamic Proxy for Logging
+
+79. Proxy vs. Decorator
+
+80. ViewModel
+
+Coding Exercise 11: Proxy Coding Exercise
+
+81. Bit Fragging
+
+82. Summary

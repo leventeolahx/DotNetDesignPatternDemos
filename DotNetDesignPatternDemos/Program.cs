@@ -1,6 +1,4 @@
-﻿using DotNetDesignPatternDemos.Structural.Flyweight;
-
-namespace DotNetDesignPatternDemos
+﻿namespace DotNetDesignPatternDemos
 {
     internal class Program
     {
@@ -82,7 +80,12 @@ namespace DotNetDesignPatternDemos
             //Flyweight
             //RepeatingUserNames.Start();
             //TextFormatting.Start();
-            FlyweightExercise.Start();
+            //FlyweightExercise.Start();
+
+            // Proxy
+            //ProtectionProxy.Start();
+            //PropertyProxy.Start();
+
         }
     }
 }

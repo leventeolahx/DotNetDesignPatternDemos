@@ -13,8 +13,8 @@ Section 1: The SOLID Design Principles
 4. Open-Closed Principle
 - create a product class
 - create a product filter class
-- add filter methods be size and by color
-- add a new method filterBySizeAndColor -> this breaks the open close principle 
+- add filter methods by size and by color
+- add a new method filterBySizeAndColor -> this breaks the open close principle
 
 - open close principle says that classes should be open for extension
 - but they should be closed for modifications
@@ -45,7 +45,7 @@ Section 1: The SOLID Design Principles
 - create a MultifunctionPrinter which inherits from IMachine. So far everything is good.
 - create an OldFashionedPrinter which inherits from IMachine. Fax is not supported here.
 
-- solution is to create more smaller and more specific interfaces 
+- solution is to create more smaller and more specific interfaces
 - or create a higher level interface which inherits from other interfaces
 
 - create MultiFunctionalMachine and generate constructor, Print and Scan methods
